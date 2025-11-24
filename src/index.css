@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0e5254; /* Verde principal */
+  --color-secondary: #f8fafc; /* Blanco secundario */
+  --color-accent: #dcfce7; /* Verde claro acento */
+
+  --breakpoint-3xl: 120rem;
+}
+
+.modal-entrar {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.modal-salir {
+  opacity: 1;
+  transform: scale(1);
+}
