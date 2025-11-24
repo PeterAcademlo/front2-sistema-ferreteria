@@ -178,7 +178,7 @@ const ProductManager: React.FC = () => {
                     <div className="p-2 py-5 text-center font-medium text-gray-800 text-sm truncate">
                       {product.nombre}
                     </div>
-                    <div className="p-2 py-5 text-gray-600 text-sm text-center">
+                    <div className="p-2 py-5 text-gray-600 text-sm text-center truncate">
                       {product.descripcion}
                     </div>
                     <div className="p-2 py-5 text-center font-bold text-green-600">
