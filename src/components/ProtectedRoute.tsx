@@ -22,12 +22,6 @@ const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
               Debe iniciar sesión para acceder a esta sección
             </p>
           </div>
-          <button
-            onClick={() => window.location.href = '/'}
-            className="w-full bg-primary text-white py-3 px-4 rounded-lg font-semibold hover:bg-primary-dark transition-colors"
-          >
-            Volver al Inicio
-          </button>
         </div>
       </div>
     );
