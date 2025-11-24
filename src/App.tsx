@@ -40,7 +40,7 @@ function App() {
             } 
           />
           
-          {/* Redirecciones */}
+          {/* Redirecciones    */}
           <Route 
             path="/" 
             element={
