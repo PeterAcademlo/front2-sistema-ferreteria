@@ -1,7 +1,7 @@
 import "./App.css";
 import SalesManager from "./modules/almacenamiento/layout/SalesManager";
-
 import ProductManager from "./modules/producto/layout/ProductManager";
+import ProtectedRoute from "./components/ProtectedRoute";
 import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
@@ -22,15 +22,33 @@ function App() {
     <Router>
       <div className="min-h-screen bg-secondary">
         <Routes>
-          <Route path="/almacenamiento" element={<ProductManager />} />
-          <Route path="/ventas" element={<SalesManager />} />
+          {/* 🔐 Rutas protegidas */}
+          <Route 
+            path="/almacenamiento" 
+            element={
+              <ProtectedRoute>
+                <ProductManager />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/ventas" 
+            element={
+              <ProtectedRoute>
+                <SalesManager />
+              </ProtectedRoute>
+            } 
+          />
           
-          {/* 🎯 CAMBIO CLAVE: Redirigir a /ventas si viene con token, sino a /almacenamiento */}
-          <Route path="/" element={
-            window.location.search.includes('token') 
-              ? <Navigate to="/ventas" replace />
-              : <Navigate to="/almacenamiento" replace />
-          } />
+          {/* Redirecciones */}
+          <Route 
+            path="/" 
+            element={
+              window.location.search.includes('token') 
+                ? <Navigate to="/ventas" replace />
+                : <Navigate to="/almacenamiento" replace />
+            } 
+          />
           
           <Route path="*" element={<Navigate to="/almacenamiento" replace />} />
         </Routes>
