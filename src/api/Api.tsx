@@ -1,7 +1,7 @@
 // src/services/api.ts
 import axios from "axios";
 
-const API_BASE_URL = import.meta.env.VITE_API_URL;
+const API_BASE_URL = "https://back2-sistema-ferreteria-r66z.onrender.com";
 
 // Crear instancia de axios con configuración base
 const api = axios.create({
